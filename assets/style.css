@@ -1,169 +1,162 @@
-*{
-    margin: 0;
-    padding: 0;
-    font-family: "Open Sans", sans-serif;
-    box-sizing: border-box;
+:root {
+  --primary-color: #273397;
+  --secondary-color: #c023b8;
+  --accent-color: #b803af;
+  --text-color-light: #fff;
+  --text-color-dark: #070707;
+  --opacity-default: 0.8;
 }
 
-/*body app*/
-body{
-    width: 100vw;
-    height: 100vh;
-    justify-content: center;
-    align-items: center;
-    display: flex;
-    background-image: url("background.svg");
-    background-size: 110%;
-    background-repeat: no-repeat;
-    flex-direction: column;
-    padding-top: 20px;
+/* ==================== Reset Global ==================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Open Sans", sans-serif;
 }
 
+/* ==================== Layout Principal (body) ==================== */
+body {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: 20px;
+  background-image: url("background.svg");
+  background-size: 110%;
+  background-repeat: no-repeat;
+}
 
-/*clock real time*/
+/* ==================== Componentes da Aplicação ==================== */
+
+/* Clock */
 .clock {
-    color: #fff;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 3px;
-    gap: 10px;
-    padding: 5px 0px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 5px 0 20px;
+  color: var(--text-color-light); /* Usando variável */
+  border-radius: 3px;
 }
 
 .time {
-    color: #fff;
-    font-size: 12px;
-    font-weight: 400;
+  font-size: 12px;
+  font-weight: 400;
+  color: var(--text-color-light); /* Usando variável. A propriedade já está no `.clock`, poderia ser removida se o `time` fosse filho direto. */
 }
 
-/*bigger box*/
-.bigger-box{
-    padding: 50px;
-    border-radius: 15px;
-    color: #fff;
-    background: #273397;
-    opacity: 80%;
+/* Main Box (Bigger Box) */
+.bigger-box {
+  padding: 50px;
+  border-radius: 15px;
+  color: var(--text-color-light);
+  background: var(--primary-color);
+  opacity: var(--opacity-default);
 }
 
-/*input city*/
-.input-city{
-    border: none;
-    outline: none;
-    padding: 10px 20px 10px;
-    margin: 10px  0px 10px;
-    font-size: 15px;
-    color: #070707;
-    background: #fff;
-    opacity: none;
-    border-radius: 20px 0px 0px 20px;
-    -ms-zoom-animation: none;
-    -ms-zoom: none;
+/* Inputs e Botão de Busca */
+/* Agrupamos as propriedades comuns de `input-city` e `search` */
+.input-city,
+.search {
+  border: none;
+  outline: none;
+  font-size: 15px;
+  padding: 10px 20px;
+  margin: 10px 0;
 }
 
-/*button search*/
-.search{
-    border: none;
-    outline: none;
-    padding: 10px 20px 10px;
-    margin: 10px  0px 10px;
-    cursor: pointer;
-    float: right;
-    border-radius: 0px 20px 20px 0px;
-    font-size: 15px;
-    font-weight: 700;
-    opacity: none;
-    color: #fff;
-    border-width: 2px;
-    background: #c023b8;
+.input-city {
+  border-radius: 20px 0 0 20px;
+  color: var(--text-color-dark);
+  background: var(--text-color-light);
 }
 
-.search:hover{
-    background: #b803af;
+.search {
+  border-radius: 0 20px 20px 0;
+  float: right;
+  cursor: pointer;
+  font-weight: 700;
+  color: var(--text-color-light);
+  background: var(--secondary-color);
 }
 
-/*city*/
-.city{
-    padding: 15px 0px 15px;
+.search:hover {
+  background: var(--accent-color);
 }
 
-/*temperature*/
-.temp{
-    padding: 0px 0px 10px;
-    font-size: 40px;
-    flex-direction: row;
-    display: flex;
-    justify-content: left;
-    align-items: baseline;
+/* ==================== Seção de Informações Climáticas ==================== */
+.city {
+  padding: 15px 0;
 }
 
-.temp-mi, .temp-ma{
-    font-size: 15px;
-    padding-left: 20px;
+.temp {
+  display: flex;
+  flex-direction: row; 
+  justify-content: left;
+  align-items: baseline;
+  font-size: 40px;
+  padding: 0 0 10px;
 }
 
-.cloud{
-    display: flex;
-    margin-left: -7px;
-    justify-content: left;
-    align-items: center;
+.temp-mi,
+.temp-ma {
+  font-size: 15px;
+  padding-left: 20px;
 }
 
-/*icon cloud*/
-.icon{
-    width: 17%;
+.cloud {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  margin-left: -7px;
 }
 
-.forecast{
-    color: #fff;
-    font-weight: 700;
-    text-transform: capitalize;
+.icon {
+  width: 17%;
 }
 
-.moisture{
-    padding: 10px 0px 10px;    
+.forecast {
+  font-weight: 700;
+  text-transform: capitalize;
+  color: var(--text-color-light);
 }
 
-.developer{
-    /* padding-top: 40px; */
-    margin-top: 40px;
-    flex-direction: column;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 5px 20px 5px 20px;
-    color: #ffff;
-    background: #c023b8;
-    border-radius: 30px;
-    opacity: 70%;
+.moisture {
+  padding: 10px 0;
 }
 
+/* ==================== Rodapé (developer) ==================== */
+.developer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 40px;
+  padding: 5px 20px;
+  color: var(--text-color-light);
+  background: var(--secondary-color);
+  border-radius: 30px;
+  opacity: 0.7;
+}
 
-/*responsiveness*/
+/* ==================== Media Queries (Responsividade) ==================== */
 @media only screen and (max-width: 768px) {
-    .bigger-box{
-        flex-direction: column;
-        padding: 25px;
-    }
 
-    body{
-        width: 100vw;
-        background-size: 600%;
-        background-repeat:no-repeat;
-        background-position-y: top;
-        display: flex;
-        -ms-zoom-animation: none;
-        -ms-zoom: none;
+  body {
+    background-size: 600%;
+    background-position-y: top;
+
+  }
+
+  .bigger-box {
+    padding: 25px;
+  }
+
+  .input-city,
+  .search {
+    padding: 10px 10px;
+  }
 }
-
-    .input-city{
-        padding: 10px 10px 10px;
-    }
-
-    .search{
-        padding: 10px 10px 10px;
-
-    }
-
-}
-
