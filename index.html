@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Como está o tempo?</title>
+    <link rel="stylesheet" href="assets/style.css" />
+    <link rel="icon" type="image/x-ico" href="assets/question-mark.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    
+    <div class="bigger-box">
+      <div class="clock">
+        <div>
+          <span id="hour">00</span>
+          <span class="time">Horas</span>
+        </div>
+  
+        <div>
+          <span id="minutes">00</span>
+          <span class="time">Minutos</span>
+        </div>
+  
+        <div>
+          <span id="seconds">00</span>
+          <span class="time">Segundos</span>
+          <script src="javascript.js"></script>
+        </div>
+      </div>
+      <input class="input-city" type="text" placeholder="Digite a cidade" />
+      <button class="search" onclick="button()">Buscar</button>
+
+      <div class="info">
+        <h2 class="city">Nenhum dado<br />para exibir</h2>
+
+        <div class="temp">
+          <p class="temp-a">0</p>
+          <p class="temp-mi">Min.: 0</p>
+          <p class="temp-ma">Máx.: 0</p>
+        </div>
+
+        <div class="cloud">
+          <img class="icon" src="https://openweathermap.org/img/wn/04n.png" />
+          <p class="forecast"></p>
+        </div>
+        <p class="moisture">Umidade: 0</p>
+      </div>
+    </div>
+    <div>
+      <p class="developer">Developed by Witor Linhares</p>
+    </div>
+  </body>
+</html>
