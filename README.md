@@ -6,7 +6,7 @@ PT-BR
 > 1° Buscar o nome das cidades na API através do input.<br>2° Exibir horário em tempo real na tela, aqui foram utilizadas funções nativas do Java Script.</p>
 
 <h2>Quer saber como está a previsão do tempo na sua cidade?<br>Clique no link abaixo:</h2>
-https://comoestaotempo.netlify.app/<br>
+https://climate-and-weather.netlify.app/<br>
 
 <br>
 
